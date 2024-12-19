@@ -196,7 +196,76 @@ Correlation analysis was conducted by plotting repositories with their star coun
 
 ## Results
 
+### Q1: What are the characteristics of popular & successful Repositories?
+
+This section delves into the analysis of GitHub repositories to discern the underlying characteristics that define their popularity and success. We assess this through predictive modeling, examining both popularity metrics (stars, forks, issue counts) and success classifications.
+
+#### Popularity
+
+For the popularity assessment, our primary objective is to predict the number of stars, forks, and open issues. These metrics serve as indicators of a repository's popularity. Our modeling approach includes XGBoost, Linear Regression, and Random Forest. These models were chosen for their varying abilities to handle linear and non-linear relationships within the data.
+
+In our analysis, we established a baseline for comparison by using a simple model that always predicts the median value of the target feature from the training dataset. This baseline model does not involve linear regression but is rather a method of measuring central tendency. We evaluated the performance of this model using the Root Mean Square Error (RMSE), which quantifies the average magnitude of the prediction error. The $R^2$ score, which measures the proportion of variance in the target variable that is predictable from the features, was then calculated to assess how effectively this baseline model captures the variability in the observed outcomes.
+
+The results of this comparison are captured in Table I - IV, which detail the models' performances using $R^2$ score and confidence intervals for Dataset 1 and Dataset 2, respectively. Figures and tables representing the overlapping input features between both datasets will be indicated by an asterisk symbol (*). They form the basis of our evaluations, allowing for a direct and consistent comparison of the models under standardized conditions. This approach underscores the robustness and generalizability of the models. Table V - VI complements this by showcasing the performance of all models utilizing all available input features in Dataset 2.
+
+<div align="center">
+
+Table 1: Model's regression performance on Dataset 1 for Stars and Forks, by $R^2$ score*
+
+| Model              | Stars (%)              | Forks (%)             |
+|--------------------|------------------------|-----------------------|
+| Baseline Model     | -3.75% ± 0.18%         | -8.18% ± 0.40%        |
+| Linear Regression  | 19.42% ± 0.51%         | 17.87% ± 0.38%        |
+| XGBoost            | **21.20% ± 0.36%**     | **19.69% ± 0.50%**    |
+
+Table 2: Model's regression performance on Dataset 1 for Issues, by $R^2$ score*
+
+| Model              | Issues (%)             |
+|--------------------|------------------------|
+| Baseline Model     | -15.71% ± 0.45%        |
+| Linear Regression  | 10.42% ± 0.31%         |
+| XGBoost            | **13.03% ± 0.39%**     |
+
+Table 3: Model's regression performance on Dataset 2 for Stars and Forks, by $R^2$ score*
+
+| Model              | Stars (%)              | Forks (%)             |
+|--------------------|------------------------|-----------------------|
+| Baseline Model     | -10.94% ± 0.09%        | -1.08% ± 0.02%        |
+| Linear Regression  | 14.52% ± 0.15%         | 18.36% ± 0.21%        |
+| XGBoost            | **16.34% ± 0.10%**     | **19.85% ± 0.12%**    |
+
+Table 4: Model's regression performance on Dataset 2 for Issues, by $R^2$ score*
+
+| Model              | Issues (%)             |
+|--------------------|------------------------|
+| Baseline Model     | -9.53% ± 0.06%         |
+| Linear Regression  | 24.18% ± 0.12%         |
+| XGBoost            | **27.65% ± 0.13%**     |
+
+Table 5: Model's regression performance on Dataset 2 for Stars and Forks, by $R^2$ score*
+
+| Model              | Stars (%)              | Forks (%)             |
+|--------------------|------------------------|-----------------------|
+| Baseline Model     | -10.95% ± 0.09%        | -1.09% ± 0.03%        |
+| Linear Regression  | 44.76% ± 0.12%         | 45.76% ± 0.18%        |
+| XGBoost            | **49.63% ± 0.15%**     | **54.72% ± 0.14%**    |
+
+Table 6: Model's regression performance on Dataset 2 for Issues, by $R^2$ score*
+
+| Model              | Issues (%)             |
+|--------------------|------------------------|
+| Baseline Model     | -9.51% ± 0.09%         |
+| Linear Regression  | **50.70% ± 0.13%**     |
+| XGBoost            | 49.78% ± 0.23%         |
+
+</div>
+
+To verify the robustness of our results, we used ten different random seeds, ranging from 20 to 32. For each seed, the dataset was partitioned into training and testing sets using the ```random_state``` parameter set to the corresponding seed value. This ensured that each loop's train-test split was consistent with the seed, allowing for reliable training and evaluation of the model across varied data splits.
+
+### SHAP Value Analysis
+
 ## References
+
 1. H. Borges, A. Hora, and M. T. Valente, "Understanding the Factors That Impact the Popularity of GitHub Repositories," 2016 IEEE International Conference on Software Maintenance and Evolution (ICSME), Raleigh, NC, USA, 2016, pp. 334-344.
 2. Borges, Hudson, Hora, Andre, and Valente, Marco Tulio, "Predicting the Popularity of GitHub Repositories," Proceedings of the The 12th International Conference on Predictive Models and Data Analytics in Software Engineering, PROMISE 2016.
 3. Hudson Borges and Marco Tulio Valente, "What’s in a GitHub Star? Understanding Repository Starring Practices in a Social Coding Platform," Journal of Systems and Software, vol. 146, pp. 112-129, 2018.
