@@ -242,7 +242,7 @@ Table 4: Model's regression performance on Dataset 2 for Issues, by $R^2$ score*
 | Linear Regression  | 24.18% ± 0.12%         |
 | XGBoost            | **27.65% ± 0.13%**     |
 
-Table 5: Model's regression performance on Dataset 2 for Stars and Forks, by $R^2$ score*
+Table 5: Model's regression performance on Dataset 2 for Stars and Forks, by $R^2$ score
 
 | Model              | Stars (%)              | Forks (%)             |
 |--------------------|------------------------|-----------------------|
@@ -250,7 +250,7 @@ Table 5: Model's regression performance on Dataset 2 for Stars and Forks, by $R^
 | Linear Regression  | 44.76% ± 0.12%         | 45.76% ± 0.18%        |
 | XGBoost            | **49.63% ± 0.15%**     | **54.72% ± 0.14%**    |
 
-Table 6: Model's regression performance on Dataset 2 for Issues, by $R^2$ score*
+Table 6: Model's regression performance on Dataset 2 for Issues, by $R^2$ score
 
 | Model              | Issues (%)             |
 |--------------------|------------------------|
