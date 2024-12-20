@@ -264,7 +264,7 @@ To verify the robustness of our results, we used ten different random seeds, ran
 
 ### A. SHAP Value Analysis
 
-XGBoost SHAP values on Dataset 1*
+![XGBoost SHAP values on Dataset 1*](images/xgb_eval_stars_pages-to-jpg-0001.jpg)
 
 ## References
 
