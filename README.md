@@ -262,7 +262,9 @@ Table 6: Model's regression performance on Dataset 2 for Issues, by $R^2$ score
 
 To verify the robustness of our results, we used ten different random seeds, ranging from 20 to 32. For each seed, the dataset was partitioned into training and testing sets using the ```random_state``` parameter set to the corresponding seed value. This ensured that each loop's train-test split was consistent with the seed, allowing for reliable training and evaluation of the model across varied data splits.
 
-### SHAP Value Analysis
+### A. SHAP Value Analysis
+
+XGBoost SHAP values on Dataset 1*
 
 ## References
 
