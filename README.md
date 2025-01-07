@@ -270,6 +270,10 @@ To verify the robustness of our results, we used ten different random seeds, ran
 
 Fig 1. XGBoost SHAP values on Dataset 1*
 
+![Linear Regression SHAP values on Dataset 1](images/LR_stars_eval_pages-to-jpg-0001.jpg)
+
+Fig 2. Linear Regression SHAP values on Dataset 1
+
 </div>
 
 ## References
